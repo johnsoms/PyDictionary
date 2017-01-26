@@ -70,8 +70,8 @@ class PyDictionary(object):
             try:
                 data = _get_soup_object("http://www.thesaurus.com/browse/{0}".format(term))
                 terms = data.select("div#filters-0")[0].findAll("li")
-                if len(terms) > 5:
-                    terms = terms[:5:]
+#                 if len(terms) > 5:
+#                     terms = terms[:5:]
                 li = []
                 for t in terms:
                     li.append(t.select("span.text")[0].getText())
